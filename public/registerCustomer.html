@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stay Clean - Community Hygiene Made Easy</title>
+  <!-- Include Bootstrap files from a CDN -->
+  <!-- Link to Bootstrap compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Link to Fontawesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/b739b1d7cd.js" crossorigin="anonymous"></script>
+  <!-- Link jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Link to Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <!-- Link to Bootstrap compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Link to my custom CSS stylesheet -->
+  <link rel="stylesheet" href="/StayClean/public/scleanRegister.css"/>
+</head>
+<body>
+  <!--  1st navigation bar -->
+  <nav class="navbar navbar-expand-sm navbar-dark justify-content-end" style="background-color: rgb(32, 100, 226);">
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/StayClean/public/scleanMain.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/StayClean/public/scleanAbout.html">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <!-- Dropdown lists -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Register</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/StayClean/public/registerCustomer.html">Customer</a>
+          <a class="dropdown-item" href="/StayClean/public/registerDriver.html">Driver</a>
+          <a class="dropdown-item" href="/StayClean/public/registerConductor.html">Conductor</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Services</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Waste Collection</a>
+          <a class="dropdown-item" href="#">Sewage Collection</a>
+        </div>
+      </li>
+    </ul>
+    <!-- Login button -->
+    <button class = "btn btn-default ml-auto mr-1" style="background-color: rgb(255, 255, 255); color: rgb(32, 100, 226); margin:0px 40px 0px 0px; width:65px;" type="submit"><a href="/StayClean/public/scleanLogin.html">Login</a></button>
+  </nav>
+  <!-- Customer registration form -->
+  <form action="#" method="post" class="centred-form" style="margin: 50px 400px 120px 400px;">
+    <div class="container">
+      <h3 style="text-align: center; margin: 10px 0px 5px 0px;">Customer Registration</h3>
+      <p style="text-align: center;">Please sign in with your details.</p>
+      <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+      <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <p>By creating an account you agree to our <a href="#" style="color:rgb(30, 144, 255)">Terms & Conditions</a>.</p>
+      <!-- Cancel or submit -->
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Submit</button>
+      </div>
+    </div>
+  </form>
+  <!-- Footer section -->
+  <footer class="container-fluid bg-light-blue text-center" style="padding: 5px; bottom: 0;">
+    <p>&copy; <a href="scleanMain.html"  style="color: rgb(187, 204, 236); font-size: 15px; text-align: center;">2021 Stay Clean</a></p>
+  </footer>
+</body>
+</html>

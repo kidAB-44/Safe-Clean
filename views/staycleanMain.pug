@@ -1,0 +1,152 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Stay Clean - Community Hygiene Made Easy
+  // Include Bootstrap files from a CDN
+  // Link to Bootstrap compiled and minified CSS
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+  // Link to Fontawesome icons
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  script(src='https://kit.fontawesome.com/b739b1d7cd.js', crossorigin='anonymous')
+  // Link jQuery library
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  // Link to Popper JS
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  // Link to Bootstrap compiled JavaScript
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+  // Link to my custom CSS stylesheet
+  link(rel='stylesheet', href='/StayClean/public/scleanMain.css')
+// 1st navigation bar
+nav.navbar.navbar-expand-sm.navbar-dark.justify-content-end(style='background-color: rgb(32, 100, 226);')
+  // Links
+  ul.navbar-nav
+    li.nav-item
+      a.nav-link(href='/StayClean/public/scleanMain.html') Home
+    li.nav-item
+      a.nav-link(href='/StayClean/public/scleanAbout.html') About
+    li.nav-item
+      a.nav-link(href='#') Contact
+    // Dropdown lists
+    li.nav-item.dropdown
+      a#navbardrop.nav-link.dropdown-toggle(href='#', data-toggle='dropdown')
+        | Register
+      .dropdown-menu
+        a.dropdown-item(href='/StayClean/public/registerCustomer.html') Customer
+        a.dropdown-item(href='/StayClean/public/registerDriver.html') Driver
+        a.dropdown-item(href='/StayClean/public/registerConductor.html') Conductor
+    li.nav-item.dropdown
+      a#navbardrop.nav-link.dropdown-toggle(href='#', data-toggle='dropdown')
+        | Services
+      .dropdown-menu
+        a.dropdown-item(href='#') Waste Collection
+        a.dropdown-item(href='#') Sewage Collection
+  // Login button
+  button.btn.btn-default.ml-auto.mr-1(style='background-color: rgb(255, 255, 255); color: rgb(32, 100, 226);', type='submit')
+    a(href='/StayClean/public/scleanLogin.html') Login
+// Landing page with tagline
+.bgimg
+  .transbox
+    p Stay Clean
+    h5 Community Hygiene Made Easy
+// Service section
+.container-fluid(style='padding: 30px 30px;')
+  h2(style='text-align: center;') Our Services
+  .row
+    .column
+      .card
+        img.mx-auto.d-block(src='/StayClean/public/images/garbage_load1.jpeg', alt='Subscribe', style='width:300px; height:300px; object-fit: cover; padding: 15px 0px 5px 0px;')
+        .container
+          h3(style='text-align: center; margin-top: 5px;') Book a Service
+          p Order a one-off or regular service.
+          p Waste or sewage collection.
+          p
+            button.button
+              a(href='#', style='color: rgb(187, 204, 236);') Book Now
+    .column
+      .card
+        img.mx-auto.d-block(src='/StayClean/public/images/subscribe.jpeg', alt='Subscribe', style='width:300px; height:300px; object-fit: cover; padding: 15px 0px 5px 0px;')
+        .container
+          h3(style='text-align: center; margin-top: 5px;') Become a Member
+          p Enjoy member discounts.
+          p Up to 20% off for the 1st 6 months!
+          p
+            button.button
+              a(href='#', style='color: rgb(187, 204, 236);') Join Now
+    .column
+      .card
+        img.mx-auto.d-block(src='/StayClean/public/images/pay.jpeg', alt='Payment', style='width:300px; height:300px; object-fit: cover; padding: 15px 0px 5px 0px;')
+        .container
+          h3(style='text-align: center; margin-top: 5px;') Pay for a Service
+          p Pay by mobile or card.
+          p Note: our conductors also accept cash.
+          p
+            button.button
+              a(href='#', style='color: rgb(187, 204, 236);') Pay Now
+// About Us section
+.about-section
+  h2 About Stay Clean
+  h5(style='margin: 30px 0px;') Convenient &amp; Timely Service
+  p(style='font-size: 15px; margin-left: 100px;')
+    | Our mission at Safe Clean is simple: to provide reliable automated waste management services to communities.
+    | Our team goes over and above to provide an exceptional service. Our solutions can be tailored to meet specific community
+    | needs so if you don&apos;t see what you are looking for, call us to learn more.
+// Testimonials section
+// Slideshow container
+.slideshow-container
+  h2(style='text-align: center; padding-top: 40px;') Testimonials
+  // Full-width slides/quotes
+  .mySlides
+    q
+      | I have been with Stay Clean for 2 years now and I can&apos;t say enough about their professionalism and responsiveness to my needs.
+    p.author - Brenda, Kisaasi 
+  .mySlides
+    q
+      | I was completely satisfied with the membership service. Always on time, always friendly and flexible.
+    p.author - Samson, Naalya 
+  .mySlides
+    q Mwebale nyo Stay Clean! Munyambye kinene.
+    p.author - Rita, Najjera 
+  // Next/prev buttons
+  a.prev(onclick='plusSlides(-1)') &#x276E;
+  a.next(onclick='plusSlides(1)') &#x276F;
+// Dots/bullets/indicators
+.dot-container
+  span.dot(onclick='currentSlide(1)')
+  span.dot(onclick='currentSlide(2)')
+  span.dot(onclick='currentSlide(3)')
+// Get in Touch section with map
+.container-fluid.bg-light-blue(style='padding: 40px', ;='')
+  h2(style='text-align: center; margin-bottom: 40px;') Get in Touch
+  .row
+    .col-sm-5
+      p
+        i.fas.fa-map-marker-alt   Address: 160 Bukoto St, Kampala
+      p
+        i.fas.fa-envelope-open    Email: stayclean@gmail.com
+      p
+        i.fas.fa-phone    Tel: +256-795-888-888
+    .col-sm-7
+      .row
+        .col-sm-6.form-group
+          input#fname.form-control(type='text', name='firstname', placeholder='First name')
+        .col-sm-6.form-group
+          input#lname.form-control(type='text', name='lastname', placeholder='Last name')
+      .row
+        .col-sm-6.form-group
+          input#area.form-control(type='text', name='area', placeholder='Area you live or work in')
+        .col-sm-6.form-group
+          input#email.form-control(type='email', name='email', placeholder='Your email')
+      textarea#subject.form-control(name='subject', placeholder='Ask a question or give feedback', rows='5')
+      br
+      .row
+        .col-sm-12.form-group
+          button.btn.btn-default.pull-right(style='background-color: rgb(255, 255, 255); color: rgb(32, 100, 226);', ;='', type='submit') Submit
+// Footer section
+footer.container-fluid.bg-light-blue.text-center(style='padding: 5px;')
+  p
+    | &copy; 
+    a(href='scleanMain.html', style='color: rgb(187, 204, 236); font-size: 15px; text-align: center;') 2021 Stay Clean
+// Link to JavaScript for testimonial scrolling
+script(src='scleanTestimonial.js')
