@@ -1,0 +1,121 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Stay Clean - Community Hygiene Made Easy
+  // Include Bootstrap files from a CDN
+  // Link to Bootstrap compiled and minified CSS
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+  // Link to Fontawesome icons
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  script(src='https://kit.fontawesome.com/b739b1d7cd.js', crossorigin='anonymous')
+  // Link jQuery library
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  // Link to Popper JS
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  // Link to Bootstrap compiled JavaScript
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+  // Link to my custom CSS stylesheet
+  link(rel='stylesheet', href='scleanMain.css')
+body
+  // 1st navigation bar
+  nav.navbar.navbar-expand-sm.navbar-dark.justify-content-end(style='background-color: rgb(32, 100, 226);')
+    // Links
+    ul.navbar-nav
+      li.nav-item
+        a.nav-link(href='scleanMain.html') Home
+      li.nav-item
+        a.nav-link(href='scleanAbout.html') About
+      li.nav-item
+        a.nav-link(href='#') Contact
+      // Dropdown lists
+      li.nav-item.dropdown
+        a#navbardrop.nav-link.dropdown-toggle(href='#', data-toggle='dropdown')
+          | Register
+        .dropdown-menu
+          a.dropdown-item(href='registerCustomer.html') Customer
+          a.dropdown-item(href='registerDriver.html') Driver
+          a.dropdown-item(href='registerConductor.html') Conductor
+      li.nav-item.dropdown
+        a#navbardrop.nav-link.dropdown-toggle(href='#', data-toggle='dropdown')
+          | Services
+        .dropdown-menu
+          a.dropdown-item(href='#') Waste Collection
+          a.dropdown-item(href='#') Sewage Collection
+    // Login button
+    button.btn.btn-default.ml-auto.mr-1(style='background-color: rgb(255, 255, 255); color: rgb(32, 100, 226); margin:0px 40px 0px 0px; width:65px;', type='submit')
+      a(href='scleanLogin.html') Login
+  // About Us section
+  .container-fluid.bg-grey(style='padding:60px 80px;')
+    .row
+      // <div class="col-sm-8">
+      .col-sm-12
+        h2(style='margin-bottom: 20px;') Who We Are
+        ul
+          li
+            | Stay Clean is the 
+            strong leading provider 
+            | of residential and commercial waste management services in Uganda.
+            i.fas.fa-medal(style='margin-left:20px; font-size:40px;')
+          br
+          li
+            | Our purpose is to 
+            strong empower communities
+            |  to keep the environments they live in healthy and happy.
+            i.fas.fa-hand-sparkles(style='margin-left:60px; font-size:40px;')
+          br
+          li
+            | Our 350 employees serve around 
+            strong 250,000 
+            | households, in 20 major towns and cities across Uganda.
+            i.fas.fa-globe-africa(style='margin-left:60px; font-size:40px;')
+          br
+  .container-fluid.bg-light-blue
+    .row
+      .col-sm-4
+        img(src='images/garbage_truck4.jpeg')
+      .col-sm-8
+        h2 Our Mission &amp; Values
+        p
+          | Our mission at Safe Clean is to provide reliable automated waste management services to communities.
+          | Our team goes over and above to provide an exceptional service. Our solutions can be tailored to meet specific community
+          | needs so if you don&apos;t see what you are looking for, call us to learn more.
+  // Team section
+  .container-fluid(style='padding: 30px 30px;')
+    h2(style='margin-left: 480px;') Our Team
+    .row
+      .column
+        .card
+          img.mx-auto.d-block(src='images/Founder1.jpeg', alt='Victoria', style='width:300px; height:300px; object-fit: cover; padding: 15px 0px 5px 0px;')
+          .container
+            h4(style='text-align: center;') Victoria Magaiga
+            p.title CEO &amp; Founder
+            p
+              | Jane is the chief executive officer of Safe Clean and a member of the Board of Directors.
+              | Prior to her current role, she held several key positions within the service sector, including as senior vice president
+              | and director of financial planning and analysis at GSX Services.
+      .column
+        .card
+          img.mx-auto.d-block(src='images/Founder2.jpeg', alt='Martin', style='width:300px; height:300px; object-fit: cover; padding: 15px 0px 5px 0px;')
+          .container
+            h4(style='text-align: center;') Martin Kamulegeya
+            p.title COO
+            p
+              | As chief operating officer (COO) for Safe Clean, Martin is reponsible for field operations, including oversight
+              | of collections, disposals, recycling, and landfills. He joined Safe Clean from Waste-Plus - Kenya where he worked for 3 years
+              | as the market area manager.
+      .column
+        .card
+          img.mx-auto.d-block(src='images/Founder3.jpeg', alt='Bernice', style='width:300px; height:300px; object-fit: cover; padding: 15px 0px 5px 0px;')
+          .container
+            h4(style='text-align: center;') Bernice Ssempebwa
+            p.title CFO
+            p
+              | Bernice is our new executive vice presdient and chief financial officer for Safe Clean, responsible for all finance functions. Since joining the company in 2019
+              | she has held several positions including assistant treasurer and senior audit manager.
+  // Footer section
+  footer.container-fluid.bg-light-blue.text-center(style='padding: 5px;')
+    p
+      | &copy; 
+      a(href='scleanMain.html', style='color: rgb(187, 204, 236); font-size: 15px; text-align: center;') 2021 Stay Clean
