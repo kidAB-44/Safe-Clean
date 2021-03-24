@@ -2,10 +2,9 @@
 const express = require('express');
 const router = express.Router();
 
-//Get Homepage
-router.get('scleanAbout', function(req,res,next){
+//Get page
+router.get('/', (req,res) => {
     res.render('scleanAbout', {title:'About'});
-    next();
   });
 
   module.exports = router;

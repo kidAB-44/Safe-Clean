@@ -40,7 +40,7 @@ html {
 /* Styles for containers with different background colours */
 .bg-light-blue {
   background-color:rgb(32, 100, 226);
-  color: rgb(187, 204, 236); /*rgb(246, 246, 246);*/
+  color: rgb(187, 204, 236);
 }
 
 /* * * * * * * 
@@ -54,8 +54,6 @@ form {
 .centred-form {
   width: 50%; 
   height: 50%;
-  /*min-width: 400px;
-  max-width: 400px; */
   margin: 50px 400px 255px 400px;
   background-color: rgba(241, 241, 241, 0.945);
 }
@@ -81,7 +79,6 @@ button {
 }
 
 .button:hover {
-  /* background-color: rgb(85, 85, 85); */
   opacity: 0.8;
 }
 
@@ -123,26 +120,3 @@ span.psw {
   float: right;
   padding-top: 16px;
 }
-
-/* * * * * * * 
-* Change styles for different screens 
-* * * * * * */
-
-/* @media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-
-
-/* Change styles for span and cancel button on extra small screens 
-  @media screen and (max-width: 300px) {
-    span.psw {
-      display: block;
-      float: none;
-    }
-    .cancelbtn {
-      width: 100%;
-    }
-  } 
-*/

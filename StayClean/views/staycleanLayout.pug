@@ -4,41 +4,40 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title= mySiteName
-    block links
-        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
-        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    title Stay Clean - Community Hygiene Made Easy
     block scripts
-        script(src='https://kit.fontawesome.com/b739b1d7cd.js', crossorigin='anonymous')
-        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
-        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
-        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+      link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+      link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+      script(src='https://kit.fontawesome.com/b739b1d7cd.js', crossorigin='anonymous')
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+      script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+    block links
   body
     // Navigation bar
-    nav.navbar.navbar-expand-sm.navbar-dark.justify-content-end(style=style)
-      // Links
+    nav.navbar.navbar-expand-sm.navbar-dark.justify-content-end(style='background-color: rgb(32, 100, 226);')
+      // Navigation bar links
       ul.navbar-nav
         li.nav-item
-          a.nav-link
+          a.nav-link(href='/main') Home
+        li.nav-item
+          a.nav-link(href='/about') About
+        li.nav-item
+          a.nav-link(href='/contact') Contact
         // Dropdown lists
         li.nav-item.dropdown
-          a#navbardrop.nav-link.dropdown-toggle
+          a#navbardrop.nav-link.dropdown-toggle(href='#', data-toggle='dropdown')
+            | Register
           .dropdown-menu
-            a.dropdown-item
-      // Login button right-aligned
-      button.btn.btn-default.ml-auto.mr-1
-    // Sections
-    .container-fluid
-      h2
-        .row
-            .column
-                .card
-                    img.mx-auto.d-block
-                    .container
-                        h3
-                        p
-    // Footer section
-    footer.container-fluid.bg-light-blue.text-center
-      p
-    // Link to JavaScript
-    script
+            a.dropdown-item(href='/customer') Customer
+            a.dropdown-item(href='/driver') Driver
+            a.dropdown-item(href='/conductor') Conductor
+        li.nav-item.dropdown
+          a#navbardrop.nav-link.dropdown-toggle(href='#', data-toggle='dropdown') Services
+          .dropdown-menu
+            a.dropdown-item(href='/waste') Waste Collection
+            a.dropdown-item(href='/sewage') Sewage Collection
+      // Login button
+      button.btn.btn-default.ml-auto.mr-1(style='background-color: rgb(255, 255, 255); color: rgb(32, 100, 226); margin:0px 40px 0px 0px; width:65px;', type='submit')
+        a(href='/login') Login
+    block content
