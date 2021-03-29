@@ -4,6 +4,11 @@ const multer = require('multer');
 const router = express.Router();
 const DriverReg = require('../models/DriverReg')
 
+//Get page
+router.get('/', (req,res) => {
+    res.render('registerDriver', {title:'Driver'});
+  });
+
 // Image upload
 var storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -29,9 +34,9 @@ router.post('/', upload.single('fileUpload'), async (req, res) => {
 })
 
 // Get data from database
-router.get('/', (req,res) => {
+router.get('/getDriver', async (req,res) => {
     try {
-        const driverDetails = DriverReg.find();
+        const driverDetails = await DriverReg.find();
         res.render('driverList', {drivers: driverDetails, title:'Driver List'});
     } catch(err) {
         res.send('Unable to return driver details!');
