@@ -1,0 +1,28 @@
+extends staycleanLayout.pug
+block content
+    header.card-header
+        h5.card-title Driver Details
+        div.form-row
+            div.col.form-group
+                a(href='/driver') Create New Driver
+        table.table
+            thead.thead(style='color: rgb(187, 204, 236);')
+                tr
+                    th Full Name
+                    th DOB
+                    th Gender
+                    th NIN
+                    th Vehicle Registration
+                    th Past Incidents
+                    th Residence
+                    th
+            tbody
+                if drivers.length
+                each driver in drivers 
+                    tr 
+                        td  #{driver.fname+' '+driver.lname}
+                        td  #{driver.dob}
+                        td  #{driver.fgender}
+                        td  #{driver.n_id}
+                        td  #{driver.vreg}
+                        td  #{driver.residence}
