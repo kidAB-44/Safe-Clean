@@ -2,6 +2,7 @@
 const express = require('express');
 const multer = require('multer');
 const router = express.Router();
+const DriverReg = require('../models/DriverReg')
 
 //Get page
 router.get('/', (req,res) => {
@@ -19,12 +20,16 @@ var storage = multer.diskStorage({
 });
 var upload = multer({ storage: storage })
 
-router.post('/', upload.single('fileUpload'), (req, res) => {
+router.post('/', upload.single('fileUpload'), async (req, res) => {
     try {
-        res.send(req.file);
-    } catch (err) {
-        res.send(400);
-    }
+        const newDriver = new DriverReg(req.body);
+        newDriver.fileUpload = req.file.path;
+        await newDriver.save();
+        res.send('Thank you for your registration!'); 
+    } catch(err) {
+        console.log(err);
+        res.send('Sorry! Something went wrong.');
+        };
 })
 
 module.exports = router;

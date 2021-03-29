@@ -3,7 +3,7 @@ block links
   link(rel='stylesheet', href='scleanRegister.css')
 block content
   // Conductor registration form
-  form.centred-form(action='#', method='post', style='margin: 50px 400px 120px 400px;')
+  form.centred-form(action='/conductor', method='post', style='margin: 50px 400px 120px 400px;', enctype='multipart/form-data')
     .container
       h3(style='text-align: center; margin: 10px 0px 5px 0px;') Conductor Registration
       p(style='text-align: center;') Enter conductor&apos;s details.
@@ -30,10 +30,15 @@ block content
           input.form-control(type='text', placeholder="Conductor's Residence", name='residence')
       // Conductor's residence details
       .row
-        .col-sm-12.form-group
+        .col-sm-6.form-group
           label(for='n_id')
             b National ID
           input.form-control(type='text', placeholder="Conductor's National ID", name='n_id')
+        // Conductor's photo
+        .col-sm-6.form-group
+          label(for='photo')
+            b Upload Photo
+            input(type='file', name='fileUpload' style='margin-top:5px;')
       // Cancel or submit
       .clearfix
         button.cancelbtn(type='button') Cancel

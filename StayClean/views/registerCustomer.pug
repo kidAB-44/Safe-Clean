@@ -3,7 +3,7 @@ block links
   link(rel='stylesheet', href='scleanRegister.css')
 block content
   // Customer registration form
-  form.centred-form(action='#', method='post', style='margin: 50px 400px 120px 400px;')
+  form.centred-form(action='/customer', method='post', style='margin: 50px 400px 120px 400px;', enctype='multipart/form-data')
     .container
       h3(style='text-align: center; margin: 10px 0px 5px 0px;') Customer Registration
       p(style='text-align: center;') Please sign in with your details.

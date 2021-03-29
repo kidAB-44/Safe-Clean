@@ -1,8 +1,24 @@
 // Dependencies
 const express = require('express');
+require('dotenv').config();
+const mongoose = require('mongoose');
 
 // Initiate Expres app
 const app = express();
+
+// Database connection
+mongoose.connect(process.env.DATABASE, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
+  
+mongoose.connection
+    .on('open', () => {
+        console.log('Mongoose connection open');
+})
+    .on('error', (err) => {
+        console.log(`Connection error: ${err.message}`);
+});
 
 // Routes
 const main = require('./routes/scleanMain');
