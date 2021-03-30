@@ -1,4 +1,4 @@
-extends staycleanLayout.pug
+extends staycleanLayout
 block links
   link(rel='stylesheet', href='scleanRegister.css')
 block content
@@ -23,16 +23,16 @@ block content
         .col-sm-6.form-group
           label(for='dob')
             b Date of Birth
-          input.form-control(type='text', placeholder="Driver's Date of Birth", name='dob')
+          input.form-control(type='date', placeholder="DD/MM/YYYY", name='dob')
         .col-sm-6.form-group
           label(for='gender', style='margin-bottom: 15px;')
             b Gender
           br
           label
-            input(type='checkbox', name='fgender', value='')
+            input(type='checkbox', name='gender', value = "Female")
             |  Female
           label
-            input(type='checkbox', name='mgender', value='', style='margin-left:10px;')
+            input(type='checkbox', name='gender', value = "Male", style='margin-left:10px;')
             |  Male
       // Driver's national identification, vehicle registration details
       .row
@@ -58,10 +58,10 @@ block content
           br
           select(name='dperf')
             option(value='') Select:
-            option(value='accidents') Accidents
-            option(value='fights') Fights
-            option(value='theft') Theft
-            option(value='other') Other Misconduct
+            option(value='Accidents') Accidents
+            option(value='Fights') Fights
+            option(value='Theft') Theft
+            option(value='Other') Other Misconduct
           textarea.form-control(name='ddetails', placeholder="Details of driver's performance", rows='5', style='margin-top: 10px;')
         // Driver's photo
         .col-sm-6.form-group

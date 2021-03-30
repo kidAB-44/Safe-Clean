@@ -4,7 +4,7 @@ const router = express.Router();
 
 //Get page
 router.get('/', (req,res) => {
-    res.render('scleanMain', {title:'Home'});
+    res.render('scleanMain', {title:'Stay Clean - Home'});
   });
 
   module.exports = router;

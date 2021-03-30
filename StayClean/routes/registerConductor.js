@@ -6,7 +6,7 @@ const ConductorReg = require('../models/ConductorReg')
 
 //Get page
 router.get('/', (req,res) => {
-    res.render('registerConductor', {title:'Conductor'});
+    res.render('registerConductor', {title:'Register Conductor'});
   });
 
 // Image upload

@@ -14,8 +14,7 @@ const driverSchema = new mongoose.Schema({
   dob: {
     type: String,
   },
-  fgender: String,
-  mgender: String,
+  gender: String,
   n_id: {
     type: String,
     unique: String,

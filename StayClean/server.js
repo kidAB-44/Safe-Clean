@@ -37,6 +37,7 @@ app.use(express.urlencoded({extended:true}));
 
 // Serve static files from Stay Clean Project
 app.use(express.static('public'));
+app.use('/public/fileUpload', express.static(__dirname + '/public/fileUpload'));
 
 app.use('/main', main);
 app.use('/about', about);

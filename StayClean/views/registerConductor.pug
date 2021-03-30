@@ -1,4 +1,4 @@
-extends staycleanLayout.pug
+extends staycleanLayout
 block links
   link(rel='stylesheet', href='scleanRegister.css')
 block content
@@ -23,7 +23,7 @@ block content
         .col-sm-6.form-group
           label(for='dob')
             b Date of Birth
-          input.form-control(type='text', placeholder="Conductor's Date of Birth", name='dob')
+          input.form-control(type='date', name='dob')
         .col-sm-6.form-group
           label(for='residence')
             b Residence
