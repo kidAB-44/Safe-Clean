@@ -3,25 +3,23 @@ block links
   link(rel='stylesheet', href='scleanRegister.css')
 block content
   // User form details
-  form.centred-form(action='#', method='post', enctype='multipart/form-data')
+  form.centred-form(action='/login', method='post')
     h3(style='text-align: center; margin: 10px 0px 0px 0px;') Login Form
     .container
-      label(for='uname')
+      label(for='username')
         b Username
-      input(type='text', placeholder='Enter Username', name='uname')
-      label(for='psw')
+      input(type='text', placeholder='Enter username', name='username')
+      label(for='password')
         b Password
-      input(type='password', placeholder='Enter Password', name='psw')
+      input(type='password', placeholder='Enter password', name='password')
       button(type='submit')
         a(href='#')
         | Login
-      label
-        input(type='checkbox', checked='checked', name='remember')
-        |  Remember me
-    .container-footer
-      button.cancelbtn(type='button') Cancel
-      span.psw(style='color: rgb(30, 144, 255);')
-        a(href='/customer') Create an account
+    .row
+        .col-sm-6.form-group
+          a(href='/registration', style='padding-left: 15px;') Register
+        .col-sm-6.form-group
+          a(href='/main', style='padding-left: 230px;') Home Page
   // Footer section
   footer.container-fluid.bg-light-blue.text-center(style='padding: 5px; bottom: 0;')
     p

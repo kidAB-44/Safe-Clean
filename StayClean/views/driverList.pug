@@ -23,18 +23,19 @@ block content
                     th Vehicle Registration
                     th Residence
                     th Performance Record
-                    th 
+                    th Details
             tbody
                 if drivers.length 
                 each driver in drivers ? drivers : [] 
                     tr 
-                        td  #{driver.fname+' '+driver.lname}
+                        td  #{driver.firstname+' '+driver.lastname}
                         td  #{driver.dob}
                         td  #{driver.gender}
                         td  #{driver.n_id}
                         td  #{driver.vreg}
                         td  #{driver.residence}
                         td  #{driver.dperf}
+                        td  #{driver.ddetails}
                         td
                             a(href='/driver/update/'+driver._id) Update
                         td
@@ -43,4 +44,4 @@ block content
                                 button.btn.btn-dark.btn-block(type="submit") Delete
         div.form-row
             div.pull-right
-                a(class='button', href='/scleanMain') Home Page
+                a(class='button', href='/main') Home Page

@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 
-//Get page
+// Get page
 router.get('/', (req,res) => {
     res.render('terms', {title:'Terms & Conditions'});
   });

@@ -1,0 +1,40 @@
+extends staycleanLayout
+block links
+  link(rel='stylesheet', href='scleanRegister.css')
+block content
+  // User registration form
+  form.centred-form(action='/registration', method='post', style='margin: 50px 400px 120px 400px;')
+    .container
+      h3(style='text-align: center; margin: 10px 0px 5px 0px;') User Registration
+      p(style='text-align: center;') Please register your details.
+       br
+      // Administrator's name and details
+      .row
+        .col-sm-6.form-group
+          label(for='firstname')
+            b First Name
+          input.form-control(type='text', placeholder="First Name", name='firstname')
+        .col-sm-6.form-group
+          label(for='lastname')
+            b Last Name
+          input.form-control(type='text', placeholder="Last Name", name='lastname')
+      label
+        b Username
+      input(type='text', placeholder='Enter username', name='username')
+      label(for='password')
+        b Password
+      input(type='password', placeholder='Enter password', name='password')
+      // Cancel or submit
+      .clearfix
+        button.cancelbtn(type='button') Cancel
+        button.signupbtn(type='submit') Submit
+      .row
+        .col-sm-6.form-group
+          a(href='/login', style='padding-left: 0px;') Login
+        .col-sm-6.form-group
+          a(href='/main', style='padding-left: 235px;') Home Page
+  // Footer section
+  footer.container-fluid.bg-light-blue.text-center(style='padding: 5px; bottom: 0;')
+    p
+      | &copy; 
+      a(href='/main', style='color: rgb(187, 204, 236); font-size: 15px; text-align: center;') 2021 Stay Clean

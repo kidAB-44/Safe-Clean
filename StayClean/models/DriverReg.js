@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 
 //  Create schema for data
 const driverSchema = new mongoose.Schema({
-  fname: {
+  firstname: {
     type: String,
     required: 'Please enter the first name.'
   },
-  lname: {
+  lastname: {
     type: String,
     required: 'Please enter the last name.'
   },

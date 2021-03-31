@@ -4,7 +4,7 @@ const multer = require('multer');
 const router = express.Router();
 const ConductorReg = require('../models/ConductorReg')
 
-//Get page
+// Get page
 router.get('/', (req,res) => {
     res.render('registerConductor', {title:'Register Conductor'});
   });
@@ -15,7 +15,7 @@ var storage = multer.diskStorage({
       cb(null, 'public/fileUpload');
   },
   filename: (req, file, cb) => {
-      cb(null, file.originalname);
+      cb(null, file.originalastname);
   }
 });
 var upload = multer({ storage: storage })

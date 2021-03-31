@@ -6,7 +6,7 @@ block content
         div.col.form-group.col-md-12   
             div.form-row
                 div.col-md-10
-                    p(style='margin:10px 0px 0px 20px;') Details for #{driver.fname+' '+driver.lname}
+                    p(style='margin:10px 0px 0px 20px;') Details for #{driver.firstname+' '+driver.lastname}
     div.form-row
         img(src='/'+driver.fileUpload width="150px" height="auto")
     form(method="post" action="/driver/update?id="+driver._id)
@@ -15,11 +15,11 @@ block content
                 tr
                     th First Name
                     td 
-                        input.form-control(value = driver.fname name ="fname")
+                        input.form-control(value = driver.firstname name ="firstname")
                 tr
                     th Last Name
                     td 
-                        input.form-control(value = driver.lname name ="lname")
+                        input.form-control(value = driver.lastname name ="lastname")
                 tr
                     th DOB
                     td 
@@ -43,6 +43,14 @@ block content
                     th Residence
                     td 
                         input.form-control(value = driver.residence name ="residence")
+                tr
+                    th Performance
+                    td 
+                        input.form-control(value = driver.dperf name ="dperf")
+                tr
+                    th Details
+                    td 
+                        input.form-control(value = driver.ddetails name ="ddetails")
                 tr
                     td(colspan=0.25)
                         button.btn.btn-dark.btn-block(type="submit") Update
