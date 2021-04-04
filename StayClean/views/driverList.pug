@@ -1,0 +1,47 @@
+extends staycleanLayout
+block content
+    header.card-header
+        h5.card-title Driver Details
+        div.form-row
+            div.col.form-group
+                a(href='/driver') Create New Driver
+        div.form-row
+            div.col.form-group.col-md-12   
+                form.search(action='/driver/getDriver')
+                    div.form-row
+                        div.col-md-8
+                            input.form-control(name='gender' placeholder="Enter your search term (gender) ...")
+                        div.col-md-4
+                            input.btn.btn-dark.btn-block(type="submit")
+        table.table.table-striped.table-hover
+            thead.thead(style='color: rgb(187, 204, 236);')
+                tr
+                    th Full Name
+                    th DOB
+                    th Gender
+                    th NIN
+                    th Vehicle Registration
+                    th Residence
+                    th Performance Record
+                    th Details
+            tbody
+                if drivers.length 
+                each driver in drivers ? drivers : [] 
+                    tr 
+                        td  #{driver.firstname+' '+driver.lastname}
+                        td  #{driver.dob}
+                        td  #{driver.gender}
+                        td  #{driver.n_id}
+                        td  #{driver.vreg}
+                        td  #{driver.residence}
+                        td  #{driver.dperf}
+                        td  #{driver.ddetails}
+                        td
+                            a(href='/driver/update/'+driver._id) Update
+                        td
+                            form(method="post" action='/driver/delete')
+                                input(type="hidden", placeholder="", name="id", value=driver._id)
+                                button.btn.btn-dark.btn-block(type="submit") Delete
+        div.form-row
+            div.pull-right
+                a(class='button', href='/main') Home Page

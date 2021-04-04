@@ -1,0 +1,79 @@
+extends staycleanLayout
+block links
+  link(rel='stylesheet', href='scleanRegister.css')
+block content
+  // Driver registration form
+  form.centred-form(action='/driver', method='POST', style='margin: 50px 400px 120px 400px;', enctype='multipart/form-data')
+    .container
+      h3(style='text-align: center; margin: 10px 0px 5px 0px;') Driver Registration
+      p(style='text-align: center;') Enter driver&apos;s details.
+      br
+      // Driver's name
+      .row
+        .col-sm-6.form-group
+          label(for='firstname')
+            b First Name
+          input.form-control(type='text', placeholder="Driver's First Name", name='firstname')
+        .col-sm-6.form-group
+          label(for='lastname')
+            b Last Name
+          input.form-control(type='text', placeholder="Driver's Last Name", name='lastname')
+      // Driver's date of birth and gender
+      .row
+        .col-sm-6.form-group
+          label(for='dob')
+            b Date of Birth
+          input.form-control(type='date', placeholder="DD/MM/YYYY", name='dob')
+        .col-sm-6.form-group
+          label(for='gender', style='margin-bottom: 15px;')
+            b Gender
+          br
+          label
+            input(type='checkbox', name='gender', value = "Female")
+            |  Female
+          label
+            input(type='checkbox', name='gender', value = "Male", style='margin-left:10px;')
+            |  Male
+      // Driver's national identification, vehicle registration details
+      .row
+        .col-sm-6.form-group
+          label(for='n_id')
+            b National ID
+          input.form-control(type='text', placeholder="Driver's National ID", name='n_id')
+        .col-sm-6.form-group
+          label(for='vreg')
+            b Vehicle Registration
+          input.form-control(type='text', placeholder="Driver's Vehicle Registration", name='vreg')
+      // Driver's residence details
+      .row
+        .col-sm-12.form-group
+          label(for='residence')
+            b Residence
+          input.form-control(type='text', placeholder="Driver's Residence", name='residence')
+      // Select type of driver's performance to be evaluated.
+      .row
+        .col-sm-6.form-group
+          label(for='dperf')
+            b Driver&apos;s Performance
+          br
+          select(name='dperf')
+            option(value='') Select:
+            option(value='Accidents') Accidents
+            option(value='Fights') Fights
+            option(value='Theft') Theft
+            option(value='Other') Other Misconduct
+          textarea.form-control(name='ddetails', placeholder="Details of driver's performance", rows='5', style='margin-top: 10px;')
+        // Driver's photo
+        .col-sm-6.form-group
+          label(for='photo')
+            b Upload Photo
+            input(type='file', name='fileUpload' style='margin-top:5px;')
+          .row
+            button.cancelbtn(type='button', style='width:100px; height: 40px; float: left; margin-left:15px; margin-top:30px; text-align: centre;') Cancel
+          .row
+            button.signupbtn(type='submit', style='width:100px; height: 45px; float: left; margin-left:15px; margin-top:5px; text-align: centre;') Submit
+  // Footer section
+  footer.container-fluid.bg-light-blue.text-center(style='padding: 5px; bottom: 0;')
+    p
+      | &copy; 
+      a(href='/main', style='color: rgb(187, 204, 236); font-size: 15px; text-align: center;') 2021 Stay Clean

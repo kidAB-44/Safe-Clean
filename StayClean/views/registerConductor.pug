@@ -1,0 +1,50 @@
+extends staycleanLayout
+block links
+  link(rel='stylesheet', href='scleanRegister.css')
+block content
+  // Conductor registration form
+  form.centred-form(action='/conductor', method='post', style='margin: 50px 400px 120px 400px;', enctype='multipart/form-data')
+    .container
+      h3(style='text-align: center; margin: 10px 0px 5px 0px;') Conductor Registration
+      p(style='text-align: center;') Enter conductor&apos;s details.
+      br
+      // Conductor's name
+      .row
+        .col-sm-6.form-group
+          label(for='firstname')
+            b First Name
+          input.form-control(type='text', placeholder="Conductor's First Name", name='firstname')
+        .col-sm-6.form-group
+          label(for='lastname')
+            b Last Name
+          input.form-control(type='text', placeholder="Conductor's Last Name", name='lastname')
+      // Conductor's date of birth and national identification
+      .row
+        .col-sm-6.form-group
+          label(for='dob')
+            b Date of Birth
+          input.form-control(type='date', name='dob')
+        .col-sm-6.form-group
+          label(for='residence')
+            b Residence
+          input.form-control(type='text', placeholder="Conductor's Residence", name='residence')
+      // Conductor's residence details
+      .row
+        .col-sm-6.form-group
+          label(for='n_id')
+            b National ID
+          input.form-control(type='text', placeholder="Conductor's National ID", name='n_id')
+        // Conductor's photo
+        .col-sm-6.form-group
+          label(for='photo')
+            b Upload Photo
+            input(type='file', name='fileUpload' style='margin-top:5px;')
+      // Cancel or submit
+      .clearfix
+        button.cancelbtn(type='button') Cancel
+        button.signupbtn(type='submit') Submit
+  // Footer section
+  footer.container-fluid.bg-light-blue.text-center(style='padding: 5px; bottom: 0;')
+    p
+      | &copy; 
+      a(href='/main', style='color: rgb(187, 204, 236); font-size: 15px; text-align: center;') 2021 Stay Clean

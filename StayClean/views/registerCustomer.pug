@@ -1,0 +1,31 @@
+extends staycleanLayout
+block links
+  link(rel='stylesheet', href='scleanRegister.css')
+block content
+  // Customer registration form
+  form.centred-form(action='/customer', method='post', style='margin: 50px 400px 120px 400px;', enctype='multipart/form-data')
+    .container
+      h3(style='text-align: center; margin: 10px 0px 5px 0px;') Customer Registration
+      p(style='text-align: center;') Please sign in with your details.
+      label(for='username')
+        b Username
+      input(type='text', placeholder='Enter username', name='username')
+      label(for='email')
+        b Email
+      input(type='text', placeholder='Enter email', name='email')
+      label(for='password')
+        b Password
+      input(type='password', placeholder='Enter password', name='password')
+      p
+        | By creating an account you agree to our 
+        a(href='/terms', style='color:rgb(30, 144, 255)') Terms &amp; Conditions
+        | .
+      // Cancel or submit
+      .clearfix
+        button.cancelbtn(type='button') Cancel
+        button.signupbtn(type='submit') Submit
+  // Footer section
+  footer.container-fluid.bg-light-blue.text-center(style='padding: 5px; bottom: 0;')
+    p
+      | &copy; 
+      a(href='/main', style='color: rgb(187, 204, 236); font-size: 15px; text-align: center;') 2021 Stay Clean

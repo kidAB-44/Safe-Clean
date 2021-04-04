@@ -1,0 +1,27 @@
+extends staycleanLayout
+block links
+  link(rel='stylesheet', href='scleanRegister.css')
+block content
+  // User form details
+  form.centred-form(action='/login', method='post')
+    h3(style='text-align: center; margin: 10px 0px 0px 0px;') Login Form
+    .container
+      label(for='username')
+        b Username
+      input(type='text', placeholder='Enter username', name='username')
+      label(for='password')
+        b Password
+      input(type='password', placeholder='Enter password', name='password')
+      button(type='submit')
+        a(href='#')
+        | Login
+    .row
+        .col-sm-6.form-group
+          a(href='/registration', style='padding-left: 15px;') Register
+        .col-sm-6.form-group
+          a(href='/main', style='padding-left: 230px;') Home Page
+  // Footer section
+  footer.container-fluid.bg-light-blue.text-center(style='padding: 5px; bottom: 0;')
+    p
+      | &copy; 
+      a(href='/main', style='color: rgb(187, 204, 236); font-size: 15px; text-align: center;') 2021 Stay Clean
