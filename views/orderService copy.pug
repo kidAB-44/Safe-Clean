@@ -1,0 +1,132 @@
+extends layout
+block scripts 
+    link(href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet', id='bootstrap-css')
+    script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+block links
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.0.8/css/all.css')
+    link(rel='stylesheet', href='orderService.css')
+block content
+    .container
+        br
+        h3.text-center Customer Order
+        hr
+        .card
+            table.table.table-hover.shopping-cart-wrap
+                thead.text-muted
+                tr
+                    th(scope='col') Service Type
+                    th(scope='col', style='width: 180px;') Order Type
+                    th(scope='col', style='width: 150px;') Time of Service
+                    th(scope='col' , style='width: 150px;') # of Trucks
+                    th(scope='col' , style='width: 180px;') Price
+                    th(scope='col', style='width: 150px;') Action
+                tbody
+                    tr
+                        td
+                            figure.media
+                                .img-wrap
+                                    img.img-thumbnail.img-sm(src='images/garbage_bin2.jpeg')
+                                figcaption.media-body(style='margin-left:10px;')
+                                    h6.title.text-truncate Garbage Collection
+                                    dl.param.param-inline.small
+                                        dt Truck Size: 
+                                        dd 18ft
+                        td
+                            select.form-control
+                                option One-Off
+                                option Subscription
+                        td
+                            input(type="time", name='serve-time', min="08:00" max="18:00")
+                        td
+                            select.form-control
+                                option 1
+                                option 2
+                                option 3
+                                option 4
+                        td
+                            .price-wrap
+                            var.price UGX 25,000
+                            small.text-muted (UGX 25k/week)
+                        td.text-left
+                            a.btn.btn-outline-success(title='' href='' data-toggle='tooltip' data-original-title='Save to customer list', style='margin-right: 5px;')
+                                i.fas.fa-check
+                            a.btn.btn-outline-danger(href='')
+                                i.fas.fa-trash-alt
+                    tr
+                        td
+                            figure.media
+                                .img-wrap
+                                    img.img-thumbnail.img-sm(src='images/sewage2.jpeg')
+                                figcaption.media-body(style='margin-left:10px;')
+                                    h6.title.text-truncate Sewage Collection
+                                    dl.param.param-inline.small
+                                        dt Truck Size: 
+                                        dd 23ft
+                        td
+                            select.form-control
+                                option One-Off
+                                option Subscription
+                        td
+                            input(type="time", name='serve-time', min="08:00" max="18:00")
+                        td
+                            select.form-control
+                                option 1
+                                option 2
+                                option 3
+                                option 4
+                                option 5
+                        td
+                            .price-wrap
+                            var.price UGX 175,000
+                            small.text-muted (UGX 175k/week)
+                        td.text-left
+                            a.btn.btn-outline-success(title='' href='' data-toggle='tooltip' data-original-title='Save to customer list', style='margin-right: 5px;')
+                                i.fas.fa-check
+                            a.btn.btn-outline-danger(href='')
+                                i.fas.fa-trash-alt
+    .container
+        br
+        h3.text-center Customer Details
+        hr
+        .card
+            p.text-center Search for customer
+                input(type='text' placeholder='Search..' name='search' style='margin-top:15px; margin-left:10px;')
+                button(type='submit')
+                    i.fa.fa-search
+            p.divider-text
+                span.bg-light OR
+            form(action='#')
+                .row(style='margin-left:15px; margin-right:15px;')
+                    .col-sm-4
+                        label(for='fname')
+                            i.fa.fa-user
+                            b First Name
+                            input.form-control(type='text' name='fname' placeholder='First name')
+                    .col-sm-8
+                        label(for='lname')
+                            b Last Name
+                            input.form-control(type='text' name='lname' placeholder='Last name')
+                .row(style='margin: 15px;')
+                    .col-sm-4
+                        .form-group.input-group
+                            label(for='phone')
+                                i.fas.fa-phone
+                                b Phone Number
+                                input.form-control(type='tel' name='phone' placeholder='+256-000-000-000' pattern='[\+][\(]\d{3}[\)]\d{3}[\-]\d{3}[\-]\d{3}')
+                    .col-sm-4
+                        label(for='n_id')
+                            i.fa.fa-address-card
+                            b National ID
+                            input.form-control(type='text' name='n_id' placeholder='National ID')
+                    .col-sm-4
+                        label(for='address')
+                            i.fas.fa-map-marker-alt
+                            b Location
+                            input.form-control(type='text' name='address' placeholder='Location')
+                .row(style='margin: 15px;')
+                    .col
+                        .form-group
+                            button.btn.btn-primary.btn-block(type='submit') Submit Order
+                   
+                        

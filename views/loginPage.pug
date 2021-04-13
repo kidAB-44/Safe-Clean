@@ -1,0 +1,26 @@
+extends layout
+block links
+  link(rel='stylesheet', href='register.css')
+block content
+  // User form details
+  form.centred-form(action='/login', method='post', enctype='multipart/form-data')
+    h3(style='text-align: center; margin: 10px 0px 0px 0px;') Login Form
+    .container
+      .userfield
+        label(for='username')
+          b Username
+        input(type='text', placeholder='Enter username', name='username', style='padding: 12px 40px;')
+        i.fa.fa-user.fa-lg
+      .passwordfield
+        label(for='password')
+          b Password
+        input(type='password', placeholder='Enter password', name='password', style='padding: 12px 40px;')
+        i.fa.fa-key.fa-lg
+      button(type='submit')
+        a(href='#')
+        | Login
+      .row
+        .col-sm-6.form-group
+          a(href='/registration', style='padding-left: 15px;') Register
+        .col-sm-6.form-group
+          a(href='/home', style='padding-left: 230px;') Home Page

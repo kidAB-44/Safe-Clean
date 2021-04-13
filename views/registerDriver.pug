@@ -1,0 +1,73 @@
+extends layout
+block links
+  link(rel='stylesheet', href='register.css')
+block content
+  // Driver registration form
+  form.centred-form(action='/driver', method='POST', style='margin: 50px 400px 120px 400px;', enctype='multipart/form-data', autocomplete='on')
+    .container
+      h3(style='text-align: center; margin: 10px 0px 5px 0px;') Driver Registration
+      p(style='text-align: center;') Enter driver&apos;s details.
+      br
+      // Driver's name
+      .row
+        .col-sm-6.form-group
+          label(for='fname')
+            b First Name
+          input.form-control(type='text', placeholder="Driver's first name", name='fname')
+        .col-sm-6.form-group
+          label(for='lname')
+            b Last Name
+          input.form-control(type='text', placeholder="Driver's last name", name='lname')
+      // Driver's date of birth and gender
+      .row
+        .col-sm-6.form-group
+          label(for='dob')
+            b Date of Birth
+          input.form-control(type='date', placeholder="DD/MM/YYYY", name='dob')
+        .col-sm-6.form-group
+          label(for='gender', style='margin-bottom: 15px;')
+            b Gender
+          br
+          label
+            input(type='checkbox', name='gender', value = "Female")
+            |  Female
+          label
+            input(type='checkbox', name='gender', value = "Male", style='margin-left:10px;')
+            |  Male
+      // Driver's national identification, vehicle registration details
+      .row
+        .col-sm-6.form-group
+          label(for='n_id')
+            b National ID
+          input.form-control(type='text', placeholder="Driver's national ID", name='n_id')
+        .col-sm-6.form-group
+          label(for='license')
+            b License Number
+          input.form-control(type='text', placeholder="Driving license number", name='license')
+      // Driver's residence details
+      .row
+        .col-sm-12.form-group
+          label(for='residence')
+            b Residence
+          input.form-control(type='text', placeholder="Driver's residence", name='residence')
+      // Select type of driver's performance to be evaluated.
+      .row
+        .col-sm-6.form-group
+          label(for='dperf')
+            b Driver&apos;s Performance
+          br
+          select(name='dperf')
+            option(value='') Select:
+            option(value='Accidents') Accidents
+            option(value='Fights') Fights
+            option(value='Theft') Theft
+            option(value='Other') Other Misconduct
+          textarea.form-control(name='ddetails', placeholder="Details of driver's performance", rows='5', style='margin-top: 10px;')
+        // Driver's photo
+        .col-sm-6.form-group
+          label(for='photo')
+            b Upload Photo
+            input(type='file', name='fileUpload' style='margin-top:5px;')
+          .row
+            button.cancelbtn(type='button', style='margin-left:15px; margin-top:80px;') Cancel
+            button.signupbtn(type='submit', style='margin-left:15px; margin-top:80px;') Submit

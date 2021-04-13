@@ -1,0 +1,56 @@
+extends layout
+block content
+    header.card-header
+        h5.card-title(style='height:5px;') Update Driver Details
+    div.form-row
+        div.col.form-group.col-md-12   
+            div.form-row
+                div.col-md-10
+                    p(style='margin:10px 0px 0px 20px;') Details for #{driver.fname+' '+driver.lname}
+    div.form-row
+        img(src='/'+driver.fileUpload width="150px" height="auto")
+    form(method="post" action="/driver/update?id="+driver._id)
+        table(style='margin-top:10px;').table.table-sm
+            thead.thead-light
+                tr
+                    th First Name
+                    td 
+                        input.form-control(value = driver.fname name ="fname")
+                tr
+                    th Last Name
+                    td 
+                        input.form-control(value = driver.lname name ="lname")
+                tr
+                    th DOB
+                    td 
+                        input.form-control(value = driver.dob name ="dob")
+                tr
+                    th Gender
+                        td 
+                            label Female&nbsp
+                            input(value= "Female" type="checkbox" checked = driver.gender==="Female" name="gender")
+                            label &nbsp&nbspMale&nbsp
+                            input(value= "Male" type="checkbox" checked = driver.gender==="Male" name="gender") 
+                tr
+                    th NIN
+                    td 
+                        input.form-control(value = driver.n_id name ="n_id")
+                tr
+                    th Vehicle Registration
+                    td 
+                        input.form-control(value = driver.license name ="license")
+                tr
+                    th Residence
+                    td 
+                        input.form-control(value = driver.residence name ="residence")
+                tr
+                    th Performance
+                    td 
+                        input.form-control(value = driver.dperf name ="dperf")
+                tr
+                    th Details
+                    td 
+                        input.form-control(value = driver.ddetails name ="ddetails")
+                tr
+                    td(colspan=0.25)
+                        button.btn.btn-dark.btn-block(type="submit") Update

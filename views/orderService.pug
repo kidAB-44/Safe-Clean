@@ -1,0 +1,119 @@
+extends layout
+block scripts
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+    script(src='./orderService.js' async)
+block links
+    link(href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet', id='bootstrap-css')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.0.8/css/all.css')
+    link(rel='stylesheet', href='orderService.css')
+block content
+    // Capture the details of the ordered service (garbage or sewage collection)
+    .container
+        .shopping-cart
+            br
+            h3.text-center Customer Order
+            hr
+            .card
+                .column-labels
+                    label.product-image Service Type
+                    label.product-details Order Type
+                    label.product-time Time of Service
+                    label.product-price Price per Week
+                    label.product-quantity # of Trucks
+                    label.product-removal Add/Remove
+                    label.product-line-price Total
+                .product
+                    .product-image
+                        img(src='images/garbage_bin2.jpeg')
+                    .product-details
+                        .product-title Garbage Collection
+                        p.product-description Truck Size: 18ft
+                    .product-time
+                        input(type="time", name='serve-time', min="08:00" max="18:00")
+                    .product-price 25000
+                    .product-quantity
+                        input(type='number' value='0' min='0' max='4')
+                    .product-removal
+                        button.btn.btn-outline-danger
+                            i.fas.fa-trash-alt
+                            |  Remove
+                    .product-line-price 0
+                .product
+                    .product-image
+                        img(src='images/sewage2.jpeg')
+                    .product-details
+                        .product-title Sewage Collection
+                        p.product-description Truck Size: 23ft
+                    .product-time
+                        input(type="time", name='serve-time', min="08:00" max="18:00")
+                    .product-price 175000
+                    .product-quantity
+                        input(type='number' value='0' min='0' max='5')
+                    .product-removal
+                        button.btn.btn-outline-danger
+                            i.fas.fa-trash-alt
+                            |  Remove
+                    .product-line-price 0
+                .totals
+                    .totals-item
+                        label Subtotal
+                        #cart-subtotal.totals-value 0
+                    .totals-item
+                        label Tax (18%)
+                        #cart-tax.totals-value 0
+                    .totals-item
+                        label Discount
+                        #cart-discount.totals-value 0
+                    .totals-item.totals-item-total
+                        label Grand Total
+                        #cart-total.totals-value 0
+                .btn-group
+                    button.checkout Complete Order
+                    a.button.refresh(href='/order') Restart
+    // Capture the details of the customer ordering a service
+    .container
+        br
+        h3.text-center Customer Details
+        hr
+        .card
+            p.text-center Search for customer
+                input(type='text' placeholder='Search..' name='search' style='margin-top:15px; margin-left:10px;')
+                button(type='submit')
+                    i.fa.fa-search
+            p.divider-text
+                span.bg-light OR
+            form(action='#')
+                .row(style='margin-left:15px; margin-right:15px;')
+                    .col-sm-4
+                        label(for='fname')
+                            i.fa.fa-user
+                            b First Name
+                            input.form-control(type='text' name='fname' placeholder='First name')
+                    .col-sm-8
+                        label(for='lname')
+                            b Last Name
+                            input.form-control(type='text' name='lname' placeholder='Last name')
+                .row(style='margin: 15px;')
+                    .col-sm-4
+                        .form-group.input-group
+                            label(for='phone')
+                                i.fas.fa-phone
+                                b Phone Number
+                                input.form-control(type='tel' name='phone' placeholder='+256-000-000-000' pattern='[\+][\(]\d{3}[\)]\d{3}[\-]\d{3}[\-]\d{3}')
+                    .col-sm-4
+                        label(for='n_id')
+                            i.fa.fa-address-card
+                            b National ID
+                            input.form-control(type='text' name='n_id' placeholder='National ID')
+                    .col-sm-4
+                        label(for='address')
+                            i.fas.fa-map-marker-alt
+                            b Location
+                            input.form-control(type='text' name='address' placeholder='Location')
+                .row(style='margin: 15px;')
+                    .col
+                        .form-group
+                            button.submit-order(type='submit') Submit Order
+                             
+                

@@ -1,0 +1,45 @@
+extends layout
+block links
+  link(rel='stylesheet', href='register.css')
+block content
+  // Conductor registration form
+  form.centred-form(action='/conductor', method='post', style='margin: 50px 400px 120px 400px;', enctype='multipart/form-data')
+    .container
+      h3(style='text-align: center; margin: 10px 0px 5px 0px;') Conductor Registration
+      p(style='text-align: center;') Enter conductor&apos;s details.
+      br
+      // Conductor's name
+      .row
+        .col-sm-6.form-group
+          label(for='fname')
+            b First Name
+          input.form-control(type='text', placeholder="Conductor's first name", name='fname')
+        .col-sm-6.form-group
+          label(for='lname')
+            b Last Name
+          input.form-control(type='text', placeholder="Conductor's last name", name='lname')
+      // Conductor's date of birth and national identification
+      .row
+        .col-sm-6.form-group
+          label(for='dob')
+            b Date of Birth
+          input.form-control(type='date', name='dob')
+        .col-sm-6.form-group
+          label(for='residence')
+            b Residence
+          input.form-control(type='text', placeholder="Conductor's residence", name='residence')
+      // Conductor's residence details
+      .row
+        .col-sm-6.form-group
+          label(for='n_id')
+            b National ID
+          input.form-control(type='text', placeholder="Conductor's national ID", name='n_id')
+        // Conductor's photo
+        .col-sm-6.form-group
+          label(for='photo')
+            b Upload Photo
+            input(type='file', name='fileUpload' style='margin-top:15px;')
+      // Cancel or submit
+      .clearfix
+        button.cancelbtn(type='button') Cancel
+        button.signupbtn(type='submit') Submit

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Stay Clean - Community Hygiene Made Easy</title>
+    <!-- Include Bootstrap files from a CDN -->
+    <!-- Link to Bootstrap compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to Fontawesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b739b1d7cd.js" crossorigin="anonymous"></script>
+    <!-- Link jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Link to Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Link to Bootstrap compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Link to my custom CSS stylesheet -->
+    <link rel="stylesheet" href="register.css"/>
+</head>
+<body>
+  <!--  1st navigation bar -->
+  <nav class="navbar navbar-expand-sm navbar-dark justify-content-end" style="background-color: rgb(32, 100, 226);">
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="homePage.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="aboutUs.html">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <!-- Dropdown lists -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Register</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="registerCustomer.html">Customer</a>
+          <a class="dropdown-item" href="registerDriver.html">Driver</a>
+          <a class="dropdown-item" href="registerConductor.html">Conductor</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Services</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Waste Collection</a>
+          <a class="dropdown-item" href="#">Sewage Collection</a>
+        </div>
+      </li>
+    </ul>
+    <!-- Login button -->
+    <button class = "btn btn-default ml-auto mr-1" style="background-color: rgb(255, 255, 255); color: rgb(32, 100, 226); margin:0px 40px 0px 0px; width:65px;" type="submit"><a href="loginPage.html">Login</a></button>
+  </nav>
+   <!-- Conductor registration form -->
+   <form action="#" method="post" class="centred-form" style="margin: 50px 400px 120px 400px;">
+    <div class="container">
+      <h3 style="text-align: center; margin: 10px 0px 5px 0px;">Conductor Registration</h3>
+      <p style="text-align: center;">Enter conductor's details.</p>
+      <br>
+      <!-- Conductor's name -->
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <label for="fname"><b>First Name</b></label>
+            <input class="form-control" type="text" placeholder="Conductor's First Name" name="fname">
+        </div>
+        <div class="col-sm-6 form-group">
+          <label for="lname"><b>Last Name</b></label>
+            <input class="form-control" type="text" placeholder="Conductor's Last Name" name="lname">
+        </div>
+      </div>
+      <!-- Conductor's date of birth and national identification -->
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <label for="dob"><b>Date of Birth</b></label>
+            <input class="form-control" type="text" placeholder="Conductor's Date of Birth" name="dob">
+        </div>
+        <div class="col-sm-6 form-group">
+          <label for="residence"><b>Residence</b></label>
+            <input class="form-control" type="text" placeholder="Conductor's Residence" name="residence">
+        </div>
+      </div>
+      <!-- Conductor's residence details -->
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="n_id"><b>National ID</b></label>
+            <input class="form-control" type="text" placeholder="Conductor's National ID" name="n_id">
+        </div>
+      </div>
+      <!-- Cancel or submit -->
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Submit</button>
+      </div>
+    </div>
+  </form>
+  <!-- Footer section -->
+  <footer class="container-fluid bg-light-blue text-center" style="padding: 5px; bottom: 0;">
+    <p>&copy; <a href="homePage.html"  style="color: rgb(187, 204, 236); font-size: 15px; text-align: center;">2021 Stay Clean</a></p>
+  </footer>
+</body>
+</html>
